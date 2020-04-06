@@ -1,0 +1,23 @@
+{
+  "name": "minecraft-discord-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victorperezpiqueras/minecraft-discord-bot.git"
+  },
+  "author": "victorperezpiqueras",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victorperezpiqueras/minecraft-discord-bot/issues"
+  },
+  "homepage": "https://github.com/victorperezpiqueras/minecraft-discord-bot#readme",
+  "dependencies": {
+    "discord.js": "^12.1.1",
+    "dotenv": "^8.2.0"
+  }
+}
