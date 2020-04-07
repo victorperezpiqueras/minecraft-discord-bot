@@ -62,7 +62,7 @@ bot.on('message', msg => {
         .addField('El juego del tonto: ', '!tonto')
         .addField('El juego del tonto escrito a mano con espacios: ', '!tontoamano')
         .addField('El juego del tonto por voz: ', '!tontovoz')
-        .addField('Mayor o menor: ', '!mayormenor')
+       /*  .addField('Mayor o menor: ', '!mayormenor') */
         .setColor(0x00AE86)
       msg.channel.send(embed);
       break;
@@ -204,7 +204,7 @@ bot.on('message', msg => {
       }
       break;
 
-    case 'mayormenor':
+    /* case 'mayormenor':
       // inicializar 
       var cartas = "1 1 1 1 2 2 2 2 3 3 3 3 4 4 4 4 5 5 5 5 6 6 6 6 7 7 7 7 10 10 10 10 11 11 11 11 12 12 12 12";
       cartas = cartas.split(' ');
@@ -224,15 +224,10 @@ bot.on('message', msg => {
       var respuesta = "";
       // bot.on('message', msg => { 
       bot.on('message', msg => {
-        /* while (respuesta !== "mayor" || respuesta !== "menor") { */
-        if (msg.author.equals(bot.user)) return;
-
+        if (msg.content === "fin") break;
         if (cartas.length == 0) return;
 
         respuesta = msg.content.toLowerCase();
-        /*  } */
-
-
 
         // carta aleatoria 
         var random = Math.floor(Math.random() * (cartas.length - 1)) + 1;
@@ -268,7 +263,7 @@ bot.on('message', msg => {
         msg.channel.send("Cartas totales: " + cartas);
         msg.channel.send("¿Mayor o menor?");
       });
-      break;
+      break; */
   }
 
 });
