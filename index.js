@@ -4,6 +4,7 @@ const { Client, MessageEmbed } = require('discord.js');
 const ping = require('minecraft-server-util');
 /* const mc = require('minecraft-protocol'); */
 const ytdl = require('ytdl-core');
+var gtts = require('gtts.js').gTTS;
 
 const bot = new Client();
 
@@ -62,7 +63,7 @@ bot.on('message', msg => {
         .addField('El juego del tonto: ', '!tonto')
         .addField('El juego del tonto escrito a mano con espacios: ', '!tontoamano')
         .addField('El juego del tonto por voz: ', '!tontovoz')
-       /*  .addField('Mayor o menor: ', '!mayormenor') */
+        /*  .addField('Mayor o menor: ', '!mayormenor') */
         .setColor(0x00AE86)
       msg.channel.send(embed);
       break;
@@ -120,6 +121,9 @@ bot.on('message', msg => {
         .addField('- !pretorianos', '\u200B')
         .addField('- !valhala', '\u200B')
         .addField('- !valkirias', '\u200B')
+        .addField('- !marcelo', '\u200B')
+        .addField('- !homelochino', '\u200B')
+        .addField('- !nomarge', '\u200B')
         .setColor(0x00AE86)
       msg.channel.send(embed);
       break;
@@ -164,6 +168,15 @@ bot.on('message', msg => {
     case 'valkirias':
       playAudio(msg, 'valkirias');
       break;
+    case 'marcelo':
+      playAudio(msg, 'marcelo');
+      break;
+    case 'homelochino':
+      playAudio(msg, 'homelochino');
+      break;
+    case 'nomarge':
+      playAudio(msg, 'nomarge');
+      break;
     /* case 'probando':
       console.log("hola")
       break; */
@@ -202,6 +215,44 @@ bot.on('message', msg => {
 
           })
       }
+      break;
+
+    case 'italiano':
+      var frase = "";
+      for (var i = 1; i < args.length; i++)frase += " " + args[i];
+      var speech = new gtts(frase, 'it')
+      speech.save("./audios/output.mp3")
+        .then(function () {
+          msg.member.voice.channel.join()
+            .then(connection => {
+              connection.play('./audios/output.mp3');
+            })
+        }).catch(function (err) { })
+      break;
+    case 'chino':
+      var frase = "";
+      for (var i = 1; i < args.length; i++)frase += " " + args[i];
+      var speech = new gtts(frase, 'zh-cn')
+      speech.save("./audios/output.mp3")
+        .then(function () {
+          msg.member.voice.channel.join()
+            .then(connection => {
+              connection.play('./audios/output.mp3');
+            })
+        }).catch(function (err) { })
+      break;
+
+    case 'portugues':
+      var frase = "";
+      for (var i = 1; i < args.length; i++)frase += " " + args[i];
+      var speech = new gtts(frase, 'pt')
+      speech.save("./audios/output.mp3")
+        .then(function () {
+          msg.member.voice.channel.join()
+            .then(connection => {
+              connection.play('./audios/output.mp3');
+            })
+        }).catch(function (err) { })
       break;
 
     /* case 'mayormenor':
