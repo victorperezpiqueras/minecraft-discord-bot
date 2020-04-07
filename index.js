@@ -83,7 +83,7 @@ bot.on('message', msg => {
       break;
 
     case 'online':
-      ping(process.env.MINECRAFT_SERVER_IP, process.env.MINECRAFT_SERVER_PORT, (error, response) => {
+      ping(process.env.MINECRAFT_SERVER_IP, parseInt(process.env.MINECRAFT_SERVER_PORT), (error, response) => {
         if (error) throw error;
         console.log(response)
         var embed = new MessageEmbed()
@@ -164,7 +164,7 @@ bot.on('message', msg => {
 });
 
 /* const mcBot = mc.createClient({
-  host: "51.83.233.138",   // optional
+  host: "",   // optional
   port: 25616,         // optional
   username: "MCBot",
 });
