@@ -30,8 +30,11 @@ bot.on('ready', () => {
 });
 
 bot.on('message', msg => {
+  if (msg.author.equals(bot.user)) return;
+  if (!msg.content.startsWith(PREFIX)) return;
+
   let args = msg.content.substring(PREFIX.length).split(' ');
-  switch (args[0]) {
+  switch (args[0].toLowerCase()) {
     case 'help':
       const embed = new MessageEmbed()
         .setTitle('Comandos')
@@ -62,7 +65,6 @@ bot.on('message', msg => {
 
         /* console.log(response) */
       });
-
       break;
 
     case 'online':
@@ -84,7 +86,10 @@ bot.on('message', msg => {
 
         /* console.log(response) */
       });
+      break;
 
+    case '5':
+      msg.author.send("Por el culo te la hinco");
       break;
   }
 
