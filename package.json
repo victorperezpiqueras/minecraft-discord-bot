@@ -21,6 +21,7 @@
     "discord.js": "^12.1.1",
     "dotenv": "^8.2.0",
     "ffmpeg-static": "^4.1.0",
+    "gtts.js": "^1.0.1",
     "minecraft-protocol": "^1.11.0",
     "minecraft-server-util": "^1.1.0",
     "ytdl-core": "^2.0.1"
