@@ -9,23 +9,6 @@ const bot = new Client();
 
 const PREFIX = '!';
 
-/* const mcBot = mc.createClient({
-  host: "51.83.233.138",   // optional
-  port: 25616,         // optional
-  username: "MCBot",
-  version: "1.15.2"
-});
-mcBot.on('chat', function (packet) {
-  // Listen for chat messages and echo them back.
-  var jsonMsg = JSON.parse(packet.message);
-  if (jsonMsg.translate == 'chat.type.announcement' || jsonMsg.translate == 'chat.type.text') {
-    var username = jsonMsg.with[0].text;
-    var msg = jsonMsg.with[1];
-    if (username === client.username) return;
-    client.write('chat', { message: msg });
-  }
-}); */
-
 function playAudio(msg, audioFile) {
   if (!msg.guild) return;
   if (msg.member.voice.channel) {
@@ -79,7 +62,7 @@ bot.on('message', msg => {
       msg.channel.send(embed);
       break;
     case 'server':
-      ping('51.83.233.138', 25616, (error, response) => {
+      ping(process.env.MINECRAFT_SERVER_IP, process.env.MINECRAFT_SERVER_PORT, (error, response) => {
         if (error) throw error;
         console.log(response)
         var embed = new MessageEmbed()
@@ -100,7 +83,7 @@ bot.on('message', msg => {
       break;
 
     case 'online':
-      ping('51.83.233.138', 25616, (error, response) => {
+      ping(process.env.MINECRAFT_SERVER_IP, process.env.MINECRAFT_SERVER_PORT, (error, response) => {
         if (error) throw error;
         console.log(response)
         var embed = new MessageEmbed()
@@ -126,9 +109,17 @@ bot.on('message', msg => {
         .addField('- !chupateesa', '\u200B')
         .addField('- !granjascerdos', '\u200B')
         .addField('- !sinduda', '\u200B')
+        .addField('- !caballorapido', '\u200B')
+        .addField('- !stalin', '\u200B')
+        .addField('- !lanzare', '\u200B')
+        .addField('- !pretorianos', '\u200B')
+        .addField('- !valhala', '\u200B')
+        .addField('- !valkirias', '\u200B')
         .setColor(0x00AE86)
       msg.channel.send(embed);
       break;
+
+    /* formato: sample.mp3 */
     case 'eminencia':
       playAudio(msg, 'eminencia');
       break;
@@ -149,6 +140,24 @@ bot.on('message', msg => {
       break;
     case 'sinduda':
       playAudio(msg, 'sinduda');
+      break;
+    case 'caballorapido':
+      playAudio(msg, 'caballorapido');
+      break;
+    case 'stalin':
+      playAudio(msg, 'stalin');
+      break;
+    case 'lanzare':
+      playAudio(msg, 'lanzare');
+      break;
+    case 'pretorianos':
+      playAudio(msg, 'pretorianos');
+      break;
+    case 'valhala':
+      playAudio(msg, 'valhala');
+      break;
+    case 'valkirias':
+      playAudio(msg, 'valkirias');
       break;
   }
 
