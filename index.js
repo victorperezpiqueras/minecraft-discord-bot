@@ -96,10 +96,14 @@ bot.on('message', msg => {
           .setTitle('Chavales Online: (' + response.onlinePlayers + ')')
           .setColor(0x00AE86)
         var jugadores = '';
-        for (let x = 0; x < response.samplePlayers.length; x++) {
-          jugadores += response.samplePlayers[x].name
-          if (x + 1 < response.samplePlayers.length) jugadores += ", "
+        if (!response.samplePlayers) jugadores = "No hay jugadores conectados";
+        else {
+          for (let x = 0; x < response.samplePlayers.length; x++) {
+            jugadores += response.samplePlayers[x].name
+            if (x + 1 < response.samplePlayers.length) jugadores += ", "
+          }
         }
+
         embed.setDescription(jugadores)
         msg.channel.send(embed);
       });
