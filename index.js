@@ -18,13 +18,13 @@ function playAudio(msg, audioFile) {
         connection.play('./audios/' + audioFile + '.mp3');
       })
   } else {
-    msg.reply('Conéctate a algun chat de voz tontopolla');
+    msg.reply('Conéctate a algún chat de voz');
   }
 }
 
 bot.on('ready', () => {
   console.log('Bot online');
-  bot.user.setActivity("de chavaleo");
+  bot.user.setActivity("mi amo perez dice que no hable con extraños");
 });
 
 bot.on('message', msg => {
