@@ -1,3 +1,4 @@
+![Alt text](https://cdn.iconscout.com/icon/free/png-256/discord-3-569463.png)
 # minecraft-discord-bot
 <img src="https://img.shields.io/static/v1?label=gracia&message=bastante&color=success"> <img src="https://img.shields.io/static/v1?label=utilidad&message=0%&color=red">
 
