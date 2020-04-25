@@ -1,4 +1,6 @@
 # minecraft-discord-bot
+<img src="https://img.shields.io/static/v1?label=gracia&message=bastante&color=success"> <img src="https://img.shields.io/static/v1?label=utilidad&message=0%&color=red">
+
 Bot de Discord implementado en NodeJS que proporciona información en tiempo real del estado de un servidor de Minecraft y permite reproducir varios audios por comandos de texto.
 
 ## Comandos:
