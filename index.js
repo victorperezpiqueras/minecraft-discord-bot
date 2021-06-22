@@ -128,6 +128,7 @@ bot.on('message', msg => {
         .addField('- !marcelo', '\u200B')
         .addField('- !homelochino', '\u200B')
         .addField('- !nomarge', '\u200B')
+        .addField('- !hombremetalico', '\u200B')
         .setColor(0x00AE86)
       msg.channel.send(embed);
       break;
@@ -180,6 +181,9 @@ bot.on('message', msg => {
       break;
     case 'nomarge':
       playAudio(msg, 'nomarge');
+      break;
+    case 'hombremetalico':
+      playAudio(msg, 'hombremetalico');
       break;
     /* case 'probando':
       console.log("hola")
